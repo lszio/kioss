@@ -1,0 +1,14 @@
+;; shadow-cljs configuration
+{:source-paths
+ ["src/", "test/"]
+
+ :dependencies
+ []
+
+ :builds
+ {:kioss {
+    :output-dir "target/"
+    :output-to "target/main.js"
+    :exports {:loop kioss/main-loop}
+    :target :node-library
+ }}}
