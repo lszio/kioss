@@ -6,9 +6,17 @@
  []
 
  :builds
- {:kioss {
-    :output-dir "target/"
-    :output-to "target/main.js"
-    :exports {:loop kioss/main-loop}
+ {:dev {
+    :output-to "target/dev/kioss.js"
+    :exports {:main kioss/main}
     :target :node-library
+    :externs ["./externs/screeps.externs.js"]
+    :build-hooks
+    [(utils.client/hook (+ 1 2) 2 3)]
+ }
+ :kioss {
+    :output-to "target/main.js"
+    :exports {:loop kioss/main}
+    :target :node-library
+    :externs ["./externs/screeps.externs.js"]
  }}}

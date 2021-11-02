@@ -1,0 +1,5 @@
+{:local {:host "127.0.0.1",
+         :port 21025,
+         :branch "default"},
+ :default {:host "screeps.com",
+           :branch "default"}}
