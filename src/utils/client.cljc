@@ -24,13 +24,13 @@
   (let [config (get-config :local)]
     (for [filename ["main.js" "main.map.js"]]
       (let [source (file-path "./target" filename)
-            target (file-path 
-                    (System/getenv "HOME") 
-                    (if (windows?) "AppData/Local/Screeps/scripts" "screeps/scripts")
-                    (clojure.string/join "___" 
-                      (remove clojure.string/blank?
-                        [(clojure.string/replace (:host config) "." "_") 
-                         (str (:port config))])) 
+            target (file-path
+                    (System/getenv "HOME")
+                    (if (windows?) "AppData/Local/Screeps/scripts" ".config/Screeps/scripts")
+                    (clojure.string/join "___"
+                                         (remove clojure.string/blank?
+                                                 [(clojure.string/replace (:host config) "." "_")
+                                                  (str (:port config))]))
                     (:branch config)
                     filename)]
         (copy-to source target)))))
