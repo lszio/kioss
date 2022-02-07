@@ -18,5 +18,5 @@
         :exports {:loop kioss/main}
         :output-to "target/main.js"
         :externs ["./externs/screeps.externs.js"]
-        :compiler-options {:optimizations :advanced 
+        :compiler-options {:optimizations :simple 
                            :source-map true}}}}
