@@ -2,4 +2,5 @@
          :port 21025,
          :branch "default"},
  :default {:host "screeps.com",
+           :folder "screeps.com"
            :branch "default"}}

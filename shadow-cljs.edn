@@ -1,22 +1,22 @@
 ;; shadow-cljs configuration
-{:source-paths
- ["src/", "test/"]
-
- :dependencies
- []
-
+{:source-paths ["src/", "test/"]
+ :dependencies []
  :builds
- {:dev {
-    :output-to "target/dev/kioss.js"
-    :exports {:main kioss/main}
-    :target :node-library
-    :externs ["./externs/screeps.externs.js"]
-    :build-hooks
-    [(utils.client/hook (+ 1 2) 2 3)]
- }
- :kioss {
-    :output-to "target/main.js"
-    :exports {:loop kioss/main}
-    :target :node-library
-    :externs ["./externs/screeps.externs.js"]
- }}}
+ {
+    :dev 
+    {
+        :target :node-library
+        :exports {:main kioss/main}
+        :output-to "./target/dev/main.js"
+        :build-hooks [(utils.hooks/configure-hook)
+                      (utils.hooks/compile-prepare-hook)
+                      (utils.hooks/flush-hook)]
+    }
+    :kioss 
+    {
+        :target :node-library
+        :exports {:loop kioss/main}
+        :output-to "target/main.js"
+        :externs ["./externs/screeps.externs.js"]
+        :compiler-options {:optimizations :advanced 
+                           :source-map true}}}}

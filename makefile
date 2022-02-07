@@ -1,30 +1,35 @@
 SHADOW ?= npx shadow-cljs
 
-start:
-	${SHADOW} start
+# start:
+# 	${SHADOW} start
 
-stop:
-	${SHADOW} stop
+# stop:
+# 	${SHADOW} stop
 
-restart:
-	${SHADOW} restart
+# restart:
+# 	${SHADOW} restart
 
-watch/%:
-	$(SHADOW) watch $(@F) --debug
+# watch/%:
+# 	$(SHADOW) watch $(@F) --debug
 
-compile/%:
-	$(SHADOW) compile $(@F) --debug
+# compile/%:
+# 	$(SHADOW) compile $(@F) --debug
 
-release/%:
-	$(SHADOW) release $(@F) --debug
+# release/%:
+# 	$(SHADOW) release $(@F) --debug
 
 install:
 	npm install
 
-clean:
-	rm -rf out/node/*
-	rm -rf out/test/*
+watch:
+	export KIOSS="local"; $(SHADOW) watch dev --debug
 
-dist-clean: stop clean
-	rm -rf node_modules
+release:
+	$(SHADOW) release dev $(@F) --debug
+
+compile:
+	$(SHADOW) compile kioss $(@F) --debug
+
+clean:
 	rm -rf .shadow-cljs
+	rm -rf target

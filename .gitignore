@@ -20,3 +20,6 @@ pom.xml.asc
 .hg/
 
 *-lock.json
+.lsp
+.clj-kondo
+*.history
