@@ -1,0 +1,25 @@
+{
+  "name": "@kioss/world-cljs",
+  "version": "0.0.1",
+  "private": true,
+  "author": {
+    "name": "Liszt21",
+    "email": "liszt21@qq.com"
+  },
+  "repository": {
+    "type": "https",
+    "url": "https://github.com/Liszt21/Kioss"
+  },
+  "keywords": [
+    "screeps",
+    "cljs"
+  ],
+  "scripts": {
+    "watch": "shadow-cljs watch dev --debug",
+    "release": "shadow-cljs release dev --debug",
+    "compile": "shadow-cljs compile dev"
+  },
+  "devDependencies": {
+    "shadow-cljs": "^2.19.8"
+  }
+}
