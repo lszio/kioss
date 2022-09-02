@@ -1,0 +1,44 @@
+{
+  "main": {
+    "token": "YOUR_TOKEN",
+    "protocol": "https",
+    "hostname": "screeps.com",
+    "port": 443,
+    "path": "/",
+    "branch": "main"
+  },
+  "sim": {
+    "token": "YOUR_TOKEN",
+    "protocol": "https",
+    "hostname": "screeps.com",
+    "port": 443,
+    "path": "/",
+    "branch": "sim"
+  },
+  "season": {
+    "token": "YOUR_TOKEN",
+    "protocol": "https",
+    "hostname": "screeps.com",
+    "port": 443,
+    "path": "/season",
+    "branch": "main"
+  },
+  "private": {
+    "email": "username",
+    "password": "Password",
+    "protocol": "http",
+    "hostname": "1.2.3.4",
+    "port": 21025,
+    "path": "/",
+    "branch": "main"
+  },
+  "local": {
+    "hostname": "127.0.0.1",
+    "port": 21025,
+    "branch": "default"
+  },
+  "default": {
+    "hostname": "screeps.com",
+    "branch": "default"
+  }
+}
